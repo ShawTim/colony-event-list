@@ -1,44 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Colony Event List
+This project is to demostrate how to use [colony-js](https://github.com/JoinColony/colonyJS) to query the events and logs come from [Colony Network](https://github.com/JoinColony/colonyNetwork) smart contracts deployed on the Ethereum Mainnet.
 
-## Available Scripts
+### Tech Stack
+---
+#### CRA with Redux+Typescript
+It's created with [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html) CLI:
+```
+npx create-react-app react-demo-app --template redux-typescript
+```
+#### CSS Modules with SCSS
+CRA comes with [CSS Modules](https://github.com/css-modules/css-modules) support, and we would like to use SCSS here.
+```
+npm install --save-dev node-sass
+```
+#### ColonyJS and ether.js
+As mentioned we are going to use [ColonyJS](https://github.com/JoinColony/colonyJS) to connect Colony Network. We need to install [ether.js](https://github.com/ethers-io/ethers.js/) as well.
+```
+npm install --save @colony/colony-js@2
+npm install --save ethers@4
+```
+#### react-blockies
+We would like to use an avatar library that can generated avatar by given an address, and we use [react-blockies](https://www.npmjs.com/package/react-blockies) here:
+```
+npm install --save react-blockies
+```
+#### dayjs
+We would like to format the date. While [momentjs](https://momentjs.com/) is promising, it's now a legacy project in maintenance mode. And we are going to install its alternative [dayjs](https://day.js.org/) as suggested.
+```
+npm install --save dayjs
+```
+### Dealing with Data
+---
+We refer to [here](https://github.com/JoinColony/coding-challenge-events-list#fetching-events-data) on how to use [ColonyJS](https://github.com/JoinColony/colonyJS) to query the raw data and how to process them.
 
-In the project directory, you can run:
+Detail implementation can be refered in `src/features/event/api.ts`.
+### Data Types
+---
+There are plenty of types defined to provide a human readable shapes of the converted data after processed from the raw data. Most of them are located at `src/features/event/slice.ts`, e.g.:
+- `ColonyInitialisedEventLog`
+- `ColonyRoleSetEventLog`
+- `PayoutClaimedEventLog`
+- `DomainAddedEventLog`
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+All these are the event log types for different event types. And `EventLog` is a superset of all of them.
+### React Components
+---
+The data is prepared, processed and ready in Redux store, and the data types are ready. And we need to render the data on UI.
+#### `src/App.tsx`
+The main container app. When it renders at the first time, event logs data will be queried, processed and then put in the Redux store. When Redux store data is available, the data will be passed into `EventList` component.
+#### `src/components/EventList`
+The react component that to render the event log list. The spec can be referred to [here](https://github.com/JoinColony/coding-challenge-events-list#design).
+### How to run
+---
+To install:
+```
+npm install
+```
+To run in development mode locally (since it needs to connect to the server API that doesnt support CORS, it doesnt work on Firefox):
+```
+npm start
+```
+To build in production mode (the build will be available on github page, but again the server API doesnt support CORS so it's not expected to work on github page):
+```
+npm run build
+```
+To run test (unfortunately no tests is yet available - but the framework is here):
+```
+npm test
+```
+To run test coverage report:
+```
+npm test -- --coverage
+```
+### Improvement
+---
+The project is expected to be a 4 hours project so I dont expect it will be perfect. We have a list of future improvements here:
+- Unit test with high test coverage
+- Pagination
+- Loading components (e.g. [react-content-loader](https://github.com/danilowoz/react-content-loader))

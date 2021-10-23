@@ -1,0 +1,57 @@
+.itemListContainer {
+    margin: auto;
+    width: 700px;
+    list-style: none;
+    padding: 48px 0;
+    .eventItem {
+        height: 38px;
+        padding: 26px 20px;
+        background: white;
+        box-shadow: 0 0 6px rgba(62, 118, 244, 0.14);
+        display: flex;
+        &:first-of-type {
+            border-radius: 6px 6px 0 0;
+        }
+        &:last-of-type {
+            border-radius: 0 0 6px 6px;
+        }
+        .avatar {
+            height: 38px;
+            margin-right: 20px;
+            canvas {
+                width: 37px!important;
+                height: 37px!important;
+                border-radius: 50%;
+            }
+        }
+        .content {
+            font-family: 'Mulish', sans-serif;
+            font-weight: 400;
+            overflow: hidden;
+            .primary {
+                font-size: 14px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-bottom: 4px;
+            }
+            .secondary {
+                font-size: 12px;
+                opacity: 0.7;
+            }
+            .heavy {
+                font-weight: 700;
+            }
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+            height: inherit;
+            min-height: 38px;
+            .content {
+                .primary {
+                    white-space: inherit;
+                }
+            }
+        }
+    }
+}
