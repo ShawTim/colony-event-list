@@ -1,5 +1,6 @@
 # Colony Event List
 This project is to demostrate how to use [colony-js](https://github.com/JoinColony/colonyJS) to query the events and logs come from [Colony Network](https://github.com/JoinColony/colonyNetwork) smart contracts deployed on the Ethereum Mainnet.
+![image](https://user-images.githubusercontent.com/85455/138574156-9d24edc1-94bd-44e2-9cec-4d4a5a72c98e.png)
 
 ### Tech Stack
 ---
