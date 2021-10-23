@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.0c42ab54.chunk.css",
-    "main.js": "/static/js/main.dfc6dea6.chunk.js",
-    "main.js.map": "/static/js/main.dfc6dea6.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2f99bf47.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2f99bf47.js.map",
-    "static/js/2.2d3d4d23.chunk.js": "/static/js/2.2d3d4d23.chunk.js",
-    "static/js/2.2d3d4d23.chunk.js.map": "/static/js/2.2d3d4d23.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.0c42ab54.chunk.css.map": "/static/css/main.0c42ab54.chunk.css.map",
-    "static/js/2.2d3d4d23.chunk.js.LICENSE.txt": "/static/js/2.2d3d4d23.chunk.js.LICENSE.txt"
+    "main.css": "/colony-event-list/static/css/main.0c42ab54.chunk.css",
+    "main.js": "/colony-event-list/static/js/main.ef5a506e.chunk.js",
+    "main.js.map": "/colony-event-list/static/js/main.ef5a506e.chunk.js.map",
+    "runtime-main.js": "/colony-event-list/static/js/runtime-main.c49aae30.js",
+    "runtime-main.js.map": "/colony-event-list/static/js/runtime-main.c49aae30.js.map",
+    "static/js/2.2d3d4d23.chunk.js": "/colony-event-list/static/js/2.2d3d4d23.chunk.js",
+    "static/js/2.2d3d4d23.chunk.js.map": "/colony-event-list/static/js/2.2d3d4d23.chunk.js.map",
+    "index.html": "/colony-event-list/index.html",
+    "static/css/main.0c42ab54.chunk.css.map": "/colony-event-list/static/css/main.0c42ab54.chunk.css.map",
+    "static/js/2.2d3d4d23.chunk.js.LICENSE.txt": "/colony-event-list/static/js/2.2d3d4d23.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f99bf47.js",
+    "static/js/runtime-main.c49aae30.js",
     "static/js/2.2d3d4d23.chunk.js",
     "static/css/main.0c42ab54.chunk.css",
-    "static/js/main.dfc6dea6.chunk.js"
+    "static/js/main.ef5a506e.chunk.js"
   ]
 }

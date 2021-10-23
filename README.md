@@ -60,9 +60,13 @@ To run in development mode locally (since it needs to connect to the server API 
 ```
 npm start
 ```
-To build in production mode (the build will be available on github page, but again the server API doesnt support CORS so it's not expected to work on github page):
+To build in production mode:
 ```
 npm run build
+```
+To build for [github page](https://shawtim.github.io/colony-event-list/) (the build will be available on github page, but again the server API doesnt support CORS so it's not expected to work on github page):
+```
+npm run build:github
 ```
 To run test (unfortunately no tests is yet available - but the framework is here):
 ```
